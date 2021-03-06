@@ -1,0 +1,56 @@
+﻿@model ordinanceMulti_tenantCore.Web.ViewModels.DoctorViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: darkred">Doctor Management</h1>
+
+<p>
+    <a asp-action="AddDoctor">Create New Doctor</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_NrPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor_Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Doctors)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor_FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor_LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor_NrPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor_Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditUpdate", new { doctorId = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { doctorId = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteDoctor", new { doctorId = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,47 @@
+﻿@model ordinanceMulti_tenantCore.Web.ViewModels.DoctorViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: darkred">Details</h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor_FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doctor_FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor_LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doctor_LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor_NrPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doctor_NrPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor_Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doctor_Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "EditUpdate", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

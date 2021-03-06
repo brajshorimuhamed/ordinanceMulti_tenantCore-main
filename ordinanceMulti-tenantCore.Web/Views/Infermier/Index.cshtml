@@ -1,0 +1,55 @@
+﻿@model ordinanceMulti_tenantCore.Web.ViewModels.InfermierViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: darkred">Infermier Management</h1>
+
+<p>
+    <a asp-action="AddInfermier">Create New Infermier</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Infermier_FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infermier_LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infermier_NrPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infermier_Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Infermiers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Infermier_FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Infermier_LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Infermier_NrPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Infermier_Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditUpdate", new { infermierId = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { infermierId = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteInfermier", new { infermierId = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model ordinanceMulti_tenantCore.Web.ViewModels.DoctorViewModel
+
+@{
+    ViewData["Title"] = "EditUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: darkred">EditUpdate</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Doctor_FirstName" class="control-label"></label>
+                <input asp-for="Doctor_FirstName" class="form-control" />
+                <span asp-validation-for="Doctor_FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doctor_LastName" class="control-label"></label>
+                <input asp-for="Doctor_LastName" class="form-control" />
+                <span asp-validation-for="Doctor_LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doctor_NrPhone" class="control-label"></label>
+                <input asp-for="Doctor_NrPhone" class="form-control" />
+                <span asp-validation-for="Doctor_NrPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doctor_Address" class="control-label"></label>
+                <input asp-for="Doctor_Address" class="form-control" />
+                <span asp-validation-for="Doctor_Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit Update" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
